@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import Post from "./Post"
 import './App.css';
 
 function App() {
+  const [posts, setPosts] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="app-header">
+        <img 
+            className="app-headerImage"
+            src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" 
+            alt="" 
+            />
+      </div>
+      
+      <h1>TESTING INSTA CLONE</h1>
+
+      
+      <Post username="NealDegrasse" caption="WOW it works" imageUrl="https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg" />
+      <Post username="JimJorgenson" caption="Im fat" imageUrl="https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg" />
+      <Post username="RickMartin" caption="viva la slurpies" />
+      
     </div>
   );
 }
