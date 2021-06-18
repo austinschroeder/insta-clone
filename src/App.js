@@ -5,7 +5,7 @@ import { db } from './firebase';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
-import { Button } from '@material-ui/core'
+import { Button, Input  } from '@material-ui/core'
 import './App.css';
 
 //////////MATERIAL UI STYLING////////////
@@ -38,6 +38,9 @@ function App() {
 
   const [posts, setPosts] = useState([]);
   const [open, setOpen] = useState(false);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
 
   // useEffect --> Runs a piece of code based on a specific condition
 
@@ -64,7 +67,33 @@ function App() {
         onClose={() => setOpen(false)}
       >
         <div style={modalStyle} className={classes.paper}>
-          <h2>I am a modal</h2>
+          <center>
+            <img
+              className="app-headerImage" 
+              src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" 
+              alt="" 
+            />
+            <Input 
+              placeholder="username"
+              type="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <Input 
+              placeholder="email"
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <Input 
+              placeholder="password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+
+            <Button onClick={signUp}>Sign Up</Button>
+          </center>
         </div>
       </Modal>
       <div className="app-header">
