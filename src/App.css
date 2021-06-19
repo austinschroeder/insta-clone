@@ -16,6 +16,9 @@
 
 .app-postsRight {
   margin-left: 10px;
+  height: 1000px;
+  width: 500px;
+  background-color: lightgreen;
 }
 
 .app-header {

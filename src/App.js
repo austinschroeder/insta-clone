@@ -4,7 +4,7 @@ import { db, auth } from './firebase';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
-import InstagramEmbed from 'react-instagram-embed';
+// import InstagramEmbed from 'react-instagram-embed';
 import { Button, Input  } from '@material-ui/core'
 import ImageUpload from "./ImageUpload";
 import Post from "./Post"
@@ -204,7 +204,7 @@ function App() {
         </div>
         <div className="app-postsRight">
           {/* USING https://www.npmjs.com/package/react-instagram-embed */}
-          <InstagramEmbed
+          {/* <InstagramEmbed
             url='https://www.instagram.com/p/B_uf9dmAGPw/'
             // clientAccessToken='123|456'
             maxWidth={320}
@@ -216,7 +216,7 @@ function App() {
             onSuccess={() => {}}
             onAfterRender={() => {}}
             onFailure={() => {}}
-          />
+          /> */}
         </div>
       </div>
 
