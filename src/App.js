@@ -4,7 +4,7 @@ import { db, auth } from './firebase';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
-// import InstagramEmbed from 'react-instagram-embed';
+import InstagramEmbed from 'react-instagram-embed';
 import { Button, Input  } from '@material-ui/core'
 import ImageUpload from "./ImageUpload";
 import Post from "./Post"
@@ -102,15 +102,10 @@ function App() {
       .catch((error) => alert(error.message));
 
       setOpenSignIn(false);
-
-
   }
-
-
   return (
     <div className="app">
       
-        
       <Modal
         open={open}
         onClose={() => setOpen(false)}
@@ -203,14 +198,15 @@ function App() {
         <div className="app-postsLeft">
           {
             posts.map(({id, post}) => (
-              <Post key={id} postId={id} username={post.username} caption={post.caption} imageUrl={post.imageUrl}/>
+              <Post key={id} postId={id} user={user} username={post.username} caption={post.caption} imageUrl={post.imageUrl}/>
             ))
           }
         </div>
         <div className="app-postsRight">
-          {/* <InstagramEmbed
-            url='https://instagr.am/p/Zw9o4/'
-            clientAccessToken='123|456'
+          {/* USING https://www.npmjs.com/package/react-instagram-embed */}
+          <InstagramEmbed
+            url='https://www.instagram.com/p/B_uf9dmAGPw/'
+            // clientAccessToken='123|456'
             maxWidth={320}
             hideCaption={false}
             containerTagName='div'
@@ -220,7 +216,7 @@ function App() {
             onSuccess={() => {}}
             onAfterRender={() => {}}
             onFailure={() => {}}
-          /> */}
+          />
         </div>
       </div>
 
