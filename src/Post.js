@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Post.css';
 import Avatar from '@material-ui/core/Avatar';
 import { db } from './firebase';
@@ -40,6 +40,17 @@ function Post({ username, caption, imageUrl }) {
       {/* IMAGE  */}
 
       <h4 className="post-text"><strong>{username}:</strong> {caption}</h4>
+
+      <form action="">
+        <input 
+          className="post-input" 
+          type="text"
+          placeholder="Add a comment..." 
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+        />
+      </form>
+
     </div>
   )
 }
