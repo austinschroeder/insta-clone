@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Post from "./Post"
 
 import { db, auth } from './firebase';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
+// import InstagramEmbed from 'react-instagram-embed';
 import { Button, Input  } from '@material-ui/core'
-import './App.css';
 import ImageUpload from "./ImageUpload";
+import Post from "./Post"
+import './App.css';
 
 //////////MATERIAL UI STYLING////////////
 function getModalStyle() {
@@ -108,12 +109,8 @@ function App() {
 
   return (
     <div className="app">
-      {user?.displayName ? (
-        <ImageUpload username={user.displayName}/>
-      ): (
-        <h3>Sorry you need to login to upload</h3>
-      )}
-
+      
+        
       <Modal
         open={open}
         onClose={() => setOpen(false)}
@@ -184,33 +181,56 @@ function App() {
       </Modal>
       {/* //////////////////////// */}
       {/* //////////////////////// */}
+      {/* //////////////////////// */}
+      {/* //////////////////////// */}
       <div className="app-header">
         <img 
             className="app-headerImage"
             src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" 
             alt="" 
             />
+        {/* if/or */}
+        {user ? (
+          <Button onClick={() => auth.signOut()}>Logout</Button>
+        ): (
+          <div className="app-loginContainer">
+            <Button onClick={() => setOpenSignIn(true)}>Sign In</Button>
+            <Button onClick={() => setOpen(true)}>Sign Up</Button>
+          </div>          
+        )}
+      </div>
+      <div className="app-posts">
+        <div className="app-postsLeft">
+          {
+            posts.map(({id, post}) => (
+              <Post key={id} postId={id} username={post.username} caption={post.caption} imageUrl={post.imageUrl}/>
+            ))
+          }
+        </div>
+        <div className="app-postsRight">
+          {/* <InstagramEmbed
+            url='https://instagr.am/p/Zw9o4/'
+            clientAccessToken='123|456'
+            maxWidth={320}
+            hideCaption={false}
+            containerTagName='div'
+            protocol=''
+            injectScript
+            onLoading={() => {}}
+            onSuccess={() => {}}
+            onAfterRender={() => {}}
+            onFailure={() => {}}
+          /> */}
+        </div>
       </div>
 
-      {/* if/or */}
-      {user ? (
-        <Button onClick={() => auth.signOut()}>Logout</Button>
+
+      {/* ////////////IMAGE UPLOAD/////////  */}
+      {user?.displayName ? (
+        <ImageUpload username={user.displayName}/>
       ): (
-        <div className="app-loginContainer">
-          <Button onClick={() => setOpenSignIn(true)}>Sign In</Button>
-          <Button onClick={() => setOpen(true)}>Sign Up</Button>
-        </div>
-
-        
+        <h3>Sorry you need to login to upload</h3>
       )}
-      
-      <h1>TESTING INSTA CLONE</h1>
-
-      {
-        posts.map(({id, post}) => (
-          <Post key={id} username={post.username} caption={post.caption} imageUrl={post.imageUrl}/>
-        ))
-      }
 
     </div>
   );

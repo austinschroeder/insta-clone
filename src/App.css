@@ -7,10 +7,27 @@
   background-color: #FAFAFA;
 }
 
+.app-posts {
+  padding: 20px;
+
+  /* display: flex;
+  justify-content: center; */
+}
+
+.app-postsRight {
+  margin-left: 10px;
+}
+
 .app-header {
   background-color: white;
-  padding: 20px;
+  padding: 10px;
   border-bottom: 1px solid lightgray;
+  object-fit: contain;
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-headerImage {
   object-fit: contain;
 }
 
