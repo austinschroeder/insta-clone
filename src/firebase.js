@@ -10,9 +10,11 @@ const firebaseApp = firebase.initializeApp({
 });
 
 
-
+//ACCESS DATABASE
 const db = firebaseApp.firestore();
+//ACCESS AUTHENTICATION
 const auth = firebase.auth();
+//ACCESS STORAGE (upload/delete pics)
 const storage = firebase.storage();
 
 export { db, auth, storage };

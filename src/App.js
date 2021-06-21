@@ -37,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
+  // USING HOOKS 
   const [modalStyle] = useState(getModalStyle);
 
   const [openSignIn, setOpenSignIn] = useState(false);
@@ -47,6 +48,8 @@ function App() {
   const [email, setEmail] = useState('');
   const [user, setUser] = useState(null);
 
+  // useEffect --> Runs a piece of code based on a specific condition
+  // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
@@ -65,14 +68,16 @@ function App() {
     })
   }, [user, username]);
 
-  // useEffect --> Runs a piece of code based on a specific condition
 
   useEffect(() => {
     // this is where the code runs on pageload
+    // .onSnapshot https://firebase.google.com/docs/firestore/query-data/listen
     db.collection('posts').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
       // EVERY time a new post is added, this code fires off
       setPosts(snapshot.docs.map(doc => ({
+        // \/ Document ID number \/
         id: doc.id,
+        // ALL data from Document
         post: doc.data()
       })));
     })
@@ -108,6 +113,7 @@ function App() {
       
       <Modal
         open={open}
+        // click outside of modal will close modal
         onClose={() => setOpen(false)}
       >
         <div style={modalStyle} className={classes.paper}>
@@ -198,7 +204,14 @@ function App() {
         <div className="app-postsLeft">
           {
             posts.map(({id, post}) => (
-              <Post key={id} postId={id} user={user} username={post.username} caption={post.caption} imageUrl={post.imageUrl}/>
+              <Post 
+                key={id} 
+                postId={id} 
+                user={user} 
+                username={post.username} 
+                caption={post.caption} 
+                imageUrl={post.imageUrl}
+              />
             ))
           }
         </div>

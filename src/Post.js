@@ -6,6 +6,7 @@ import { db } from './firebase';
 
 
 function Post({ postId, user, username, caption, imageUrl }) {
+  //USING HOOKS :)
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState('');
 
