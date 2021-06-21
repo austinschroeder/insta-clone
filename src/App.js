@@ -205,8 +205,8 @@ function App() {
         <div className="app-postsRight">
           {/* USING https://www.npmjs.com/package/react-instagram-embed */}
           {/* <InstagramEmbed
-            url='https://www.instagram.com/p/B_uf9dmAGPw/'
-            // clientAccessToken='123|456'
+            url='https://www.instagram.com/neildegrassetyson/?hl=en'
+            clientAccessToken='329806298746214|dfe72b0d26a62d1ffc58222ecf632424'
             maxWidth={320}
             hideCaption={false}
             containerTagName='div'
