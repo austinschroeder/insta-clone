@@ -7,7 +7,7 @@ import Modal from '@material-ui/core/Modal';
 // import InstagramEmbed from 'react-instagram-embed';
 import { Button, Input  } from '@material-ui/core'
 import ImageUpload from "./ImageUpload";
-import Post from "./Post"
+import Post from "./PostComment"
 import UserAuth from "./components/UserAuth";
 import './App.css';
 

@@ -5,7 +5,7 @@ import firebase from "firebase";
 import { db } from './firebase';
 
 
-function Post({ postId, user, username, caption, imageUrl }) {
+function PostComment({ postId, user, username, caption, imageUrl }) {
   //USING HOOKS :)
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState('');
@@ -88,4 +88,4 @@ function Post({ postId, user, username, caption, imageUrl }) {
   )
 }
 
-export default Post;
+export default PostComment;
