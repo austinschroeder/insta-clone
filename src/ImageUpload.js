@@ -9,6 +9,7 @@ function ImageUpload({username}) {
   const [progress, setProgress] = useState(0);
   const [caption, setCaption] = useState('');
 
+  // get the file in file path.. set the image in 'state' to that file
   const handleChange = (e) => {
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
@@ -18,9 +19,7 @@ function ImageUpload({username}) {
   const handleUpload = () => {
     const uploadTask = storage.ref(`images/${image.name}`).put(image);
 
-    uploadTask.on(
-      "state_changed",
-      (snapshot) => {
+    uploadTask.on("state_changed", (snapshot) => {
         // progress bar function...
         const progress = Math.round(
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100
@@ -33,7 +32,7 @@ function ImageUpload({username}) {
         alert(error.message);
       },
       () => {
-        //complete function... 
+        //Complete function... 
         storage 
           .ref("images")
           .child(image.name)

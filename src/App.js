@@ -8,6 +8,7 @@ import Modal from '@material-ui/core/Modal';
 import { Button, Input  } from '@material-ui/core'
 import ImageUpload from "./ImageUpload";
 import Post from "./Post"
+import UserAuth from "./components/UserAuth";
 import './App.css';
 
 //////////MATERIAL UI STYLING////////////
@@ -37,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
-  // USING HOOKS 
+  // USING HOOKS :)
   const [modalStyle] = useState(getModalStyle);
 
   const [openSignIn, setOpenSignIn] = useState(false);
@@ -83,11 +84,17 @@ function App() {
     })
 
   }, []);
+
+
+
+
 ///////////USER AUTH//////////////
   const signUp = (event) => {
+    //prevent page refresh
     event.preventDefault()
 
     auth
+        //firebase magic
       .createUserWithEmailAndPassword(email, password)
       .then((authUser) => {
         return authUser.user.updateProfile({
@@ -179,7 +186,7 @@ function App() {
         </form>
 
         </div>
-      </Modal>
+      </Modal> 
       {/* //////////////////////// */}
       {/* //////////////////////// */}
       {/* //////////////////////// */}
@@ -192,8 +199,10 @@ function App() {
             />
         {/* if/or */}
         {user ? (
+          // if user is true (exists)
           <Button onClick={() => auth.signOut()}>Logout</Button>
         ): (
+          // OR if user doesnt exist
           <div className="app-loginContainer">
             <Button onClick={() => setOpenSignIn(true)}>Sign In</Button>
             <Button onClick={() => setOpen(true)}>Sign Up</Button>
@@ -236,6 +245,7 @@ function App() {
 
       {/* ////////////IMAGE UPLOAD/////////  */}
       {user?.displayName ? (
+        // OPTIONAL: only render image upload if user logged in is true
         <ImageUpload username={user.displayName}/>
       ): (
         <h3>Sorry you need to login to upload</h3>
