@@ -16,5 +16,7 @@ const db = firebaseApp.firestore();
 const auth = firebase.auth();
 //ACCESS STORAGE (upload/delete pics)
 const storage = firebase.storage();
+// ??? not sure about this one?
+const anal = firebase.analytics();
 
-export { db, auth, storage };
+export { db, auth, storage, anal };

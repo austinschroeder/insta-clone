@@ -7,10 +7,12 @@ import Modal from '@material-ui/core/Modal';
 // import InstagramEmbed from 'react-instagram-embed';
 import { Button, Input  } from '@material-ui/core'
 import ImageUpload from "./ImageUpload";
-import Post from "./PostComment"
-import UserAuth from "./components/UserAuth";
+import PostComment from "./PostComment"
+// import UserAuth from "./components/UserAuth";
 import './App.css';
 
+
+/////////////////////////////////////////
 //////////MATERIAL UI STYLING////////////
 function getModalStyle() {
   const top = 50;
@@ -34,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 ////////////////////////////////////////
-
+////////////////////////////////////////
 
 function App() {
   const classes = useStyles();
@@ -51,6 +53,7 @@ function App() {
 
   // useEffect --> Runs a piece of code based on a specific condition
   // Similar to componentDidMount and componentDidUpdate:
+  // https://reactjs.org/docs/hooks-effect.html
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
@@ -213,7 +216,7 @@ function App() {
         <div className="app-postsLeft">
           {
             posts.map(({id, post}) => (
-              <Post 
+              <PostComment 
                 key={id} 
                 postId={id} 
                 user={user} 
