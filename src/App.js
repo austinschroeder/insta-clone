@@ -88,15 +88,6 @@ function App() {
 
   }, []);
 
-  // const deleteComment = () => {
-  //   db.collection("posts").doc(postId).delete();
-  // }
-
-  // const editComment = () => {
-  //   db.collection("posts").doc(postId).update({
-  //     username: 
-  //   })
-  // }
 
 ///////////USER AUTH//////////////
   const signUp = (event) => {
