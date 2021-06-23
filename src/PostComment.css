@@ -75,3 +75,16 @@
 .delete-button:hover {
   font-weight: 900;
 }
+
+.edit-button {
+  flex: 0;
+  float: right;
+  border: none;
+  color: #f3b632;
+  background-color: transparent;
+  
+}
+
+.edit-button:hover {
+  font-weight: 900;
+}

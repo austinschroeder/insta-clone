@@ -43,12 +43,14 @@ function PostComment({ postId, user, username, caption, imageUrl }) {
   }
 
   const deleteComment = (id) => {
-    console.log(id)
+    // console.log(id)
     db.collection("posts").doc(postId).collection("comments").doc(id).delete();
   }
 
   const editComment = (id) => {
-    db.collection("posts").doc(postId).update({})
+    db.collection("posts").doc(postId).collection("comments").doc(id).update({})
+    // Need to figure out what object to call with .update... tricky tricky
+    // https://firebase.google.com/docs/database/web/read-and-write
   }
   
   return (
@@ -73,11 +75,15 @@ function PostComment({ postId, user, username, caption, imageUrl }) {
             <strong>{typeof comment.username === 'string' && comment.username}: </strong> 
             {comment.text}
            {
-           (user && comment.username==user.displayName) && 
-            <button className="delete-button" onClick={() => deleteComment(id)}>
-              Delete
-            </button>
-            
+           (user && comment.username == user.displayName) && 
+            <>
+              <button className="delete-button" onClick={() => deleteComment(id)}>
+                Delete
+              </button>
+              <button className="edit-button" onClick={() => editComment(id)}>
+                Edit
+              </button>
+            </>
             }
           </p>
         ))}
