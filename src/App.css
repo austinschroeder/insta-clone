@@ -33,6 +33,11 @@
   justify-content: space-between;
 }
 
+.app-headerIcons {
+  width: 25px;
+  height: 25px;
+}
+
 .app-headerImage {
   object-fit: contain;
 }

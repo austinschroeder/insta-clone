@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import { db, auth } from './firebase';
 
@@ -88,8 +88,15 @@ function App() {
 
   }, []);
 
+  // const deleteComment = () => {
+  //   db.collection("posts").doc(postId).delete();
+  // }
 
-
+  // const editComment = () => {
+  //   db.collection("posts").doc(postId).update({
+  //     username: 
+  //   })
+  // }
 
 ///////////USER AUTH//////////////
   const signUp = (event) => {
@@ -211,6 +218,13 @@ function App() {
             <Button onClick={() => setOpen(true)}>Sign Up</Button>
           </div>          
         )}
+
+
+        {/* <img className="app-headerIcons" src="https://www.nicepng.com/png/detail/937-9379647_png-file-svg-instagram-home-icon-vector.png" alt="" />
+        <img className="app-headerIcons" src="https://www.lamar.edu/career-and-testing-services/_files/images/icons/iconfinder_90_compass_183404.png" alt="" />
+        <img className="app-headerIcons" src="https://png.pngitem.com/pimgs/s/63-630682_transparent-heart-doodle-png-transparent-instagram-heart-icon.png" alt="" /> */}
+          
+
       </div>
       <div className="app-posts">
         <div className="app-postsLeft">
