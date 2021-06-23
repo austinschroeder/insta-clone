@@ -34,6 +34,8 @@
 
 .post-comments {
   padding: 20px;
+  padding-right: 0px;
+  border-bottom: 1px solid lightgray;
 }
 
 .post-input {
@@ -49,4 +51,21 @@
   color: #6082a3;
   background-color: transparent;
   border-top: 1px solid lightgray;
+}
+
+.post-button:hover {
+  font-weight: 900;
+}
+
+.delete-button {
+  flex: 0;
+  float: right;
+  border: none;
+  color: #f33232;
+  background-color: transparent;
+  
+}
+
+.delete-button:hover {
+  font-weight: 900;
 }

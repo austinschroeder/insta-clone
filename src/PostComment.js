@@ -52,7 +52,7 @@ function PostComment({ postId, user, username, caption, imageUrl }) {
   //     username: {username}
   //   })
   // }
-  console.log(username)
+  
   return (
     <div className="post">
       <div className="post-header">
@@ -76,7 +76,12 @@ function PostComment({ postId, user, username, caption, imageUrl }) {
            {
            (user && comment.username==user.displayName) && 
             
-            <button onClick={() => deleteComment(id)}>Delete</button>
+            <button 
+              className="delete-button"
+              onClick={() => deleteComment(id)}
+            >
+              Delete
+            </button>
             
             }
           </p>
@@ -102,7 +107,7 @@ function PostComment({ postId, user, username, caption, imageUrl }) {
               Post
             </button>
           </form>
-          {/* <button onClick={deleteComment}>Delete</button> */}
+          
         </>
       )}
 
