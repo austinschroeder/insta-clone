@@ -47,11 +47,9 @@ function PostComment({ postId, user, username, caption, imageUrl }) {
     db.collection("posts").doc(postId).collection("comments").doc(id).delete();
   }
 
-  // const editComment = () => {
-  //   db.collection("posts").doc(postId).update({
-  //     username: {username}
-  //   })
-  // }
+  const editComment = (id) => {
+    db.collection("posts").doc(postId).update({})
+  }
   
   return (
     <div className="post">

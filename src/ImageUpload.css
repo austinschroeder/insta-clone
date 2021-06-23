@@ -1,7 +1,12 @@
 .imageupload {
+  position: sticky;
+  bottom: 0;
+  background-color: #FAFAFA;
   display: flex;
   flex-direction: column;
-  width: 60%;
+  max-width: 510px;
+  /* width: 80%; */
+  border-top: 5px dotted lightgray;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
