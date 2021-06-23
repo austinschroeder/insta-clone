@@ -38,6 +38,12 @@
   border-bottom: 1px solid lightgray;
 }
 
+.post-comment-p {
+  /* border-bottom: 1px solid lightgray; */
+  margin-top: 3px;
+  
+}
+
 .post-input {
   flex: 1;
   border: none;

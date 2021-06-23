@@ -71,8 +71,8 @@ function PostComment({ postId, user, username, caption, imageUrl }) {
 
       <div className="post-comments">
         {comments.length && comments.map(({comment, id}) => (
-          <p key={id}>
-            <strong>{typeof comment.username === 'string' && comment.username}</strong> 
+          <p className="post-comment-p" key={id}>
+            <strong>{typeof comment.username === 'string' && comment.username}: </strong> 
             {comment.text}
            {
            (user && comment.username==user.displayName) && 
