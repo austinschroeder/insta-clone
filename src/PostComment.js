@@ -74,7 +74,7 @@ function PostComment({ postId, user, username, caption, imageUrl }) {
           <p key={id}>
             <strong>{comment.username}</strong> {comment.text}
            {
-           comment.username==username && 
+           (user && comment.username==user.displayName) && 
             
             <button onClick={() => deleteComment(id)}>Delete</button>
             
