@@ -4,11 +4,15 @@
   background-color: #FAFAFA;
   display: flex;
   flex-direction: column;
-  max-width: 510px;
+  max-width: 515px;
   /* width: 80%; */
   border-top: 5px dotted lightgray;
   margin: 10px auto;
   padding-bottom: 20px;
+}
+
+.enter-caption {
+  height: 25px;
 }
 
 .imageupload h3 {

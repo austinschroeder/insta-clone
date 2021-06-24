@@ -72,7 +72,7 @@ function PostComment({ postId, user, username, caption, imageUrl }) {
             <strong>{typeof comment.username === 'string' && comment.username}: </strong> 
             {comment.text}
            {
-           (user && comment.username == user.displayName) && 
+           (user && comment.username === user.displayName) && 
             <>
               <button className="delete-button" onClick={() => deleteComment(id)}>
                 Delete
