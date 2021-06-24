@@ -3,6 +3,7 @@ import './PostComment.css';
 import Avatar from '@material-ui/core/Avatar';
 import firebase from "firebase";
 import { db } from './firebase';
+import EditFunction from './components/EditFunction';
 
 
 function PostComment({ postId, user, username, caption, imageUrl }) {
@@ -47,11 +48,7 @@ function PostComment({ postId, user, username, caption, imageUrl }) {
     db.collection("posts").doc(postId).collection("comments").doc(id).delete();
   }
 
-  const editComment = (id) => {
-    db.collection("posts").doc(postId).collection("comments").doc(id).update({})
-    // Need to figure out what object to call with .update... tricky tricky
-    // https://firebase.google.com/docs/database/web/read-and-write
-  }
+  
   
   return (
     <div className="post">
@@ -71,7 +68,7 @@ function PostComment({ postId, user, username, caption, imageUrl }) {
 
       <div className="post-comments">
         {comments.length && comments.map(({comment, id}) => (
-          <p className="post-comment-p" key={id}>
+          <div className="post-comment-p" key={id}>
             <strong>{typeof comment.username === 'string' && comment.username}: </strong> 
             {comment.text}
            {
@@ -80,12 +77,13 @@ function PostComment({ postId, user, username, caption, imageUrl }) {
               <button className="delete-button" onClick={() => deleteComment(id)}>
                 Delete
               </button>
-              <button className="edit-button" onClick={() => editComment(id)}>
+              {/* <button className="edit-button" onClick={() => editComment(id)}>
                 Edit
-              </button>
+              </button> */}
+              <EditFunction id={id} postId={postId} comment={comment.text}/>
             </>
             }
-          </p>
+          </div>
         ))}
       </div>
   
