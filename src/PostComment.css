@@ -63,7 +63,7 @@
   font-weight: 900;
 }
 
-.delete-button {
+.delete-comment {
   flex: 0;
   float: right;
   border: none;
@@ -72,8 +72,30 @@
   
 }
 
-.delete-button:hover {
+.delete-comment:hover {
   font-weight: 900;
+}
+
+.delete-upload {
+  padding: 2px;
+  flex: 0;
+  float: right;
+  border: none;
+  background-color: transparent;
+  color: #f33232;
+  border: 1px #f33232 solid;
+  border-radius: 3px;
+  margin-left: 20px;
+}
+
+.delete-upload:hover {
+  background-color: #f33232;
+  flex: 0;
+  float: right;
+  border: none;
+  color: white;
+  border: 1px #f33232 solid;
+  margin-left: 20px;
 }
 
 .edit-button {

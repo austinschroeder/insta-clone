@@ -6,7 +6,7 @@ import { db } from './firebase';
 import EditFunction from './components/EditFunction';
 
 
-function PostComment({ postId, user, username, caption, imageUrl }) {
+function PostComment({ postId, user, username, caption, imageUrl}) {
   //USING HOOKS :)
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState('');
@@ -65,10 +65,12 @@ function PostComment({ postId, user, username, caption, imageUrl }) {
           src=""
         />
         <h3>{username}</h3>
-        
-        <button className="delete-upload" onClick={() => deleteUpload(postId)}>
-                Delete
+        {
+          (user && username === user.displayName) &&
+          <button className="delete-upload" onClick={() => deleteUpload(postId)}>
+                Delete Upload
               </button>
+        }
       </div>
       
       <img className="post-image" src={imageUrl} alt="" />
@@ -84,7 +86,7 @@ function PostComment({ postId, user, username, caption, imageUrl }) {
            {
            (user && comment.username === user.displayName) && 
             <>
-              <button className="delete-button" onClick={() => deleteComment(id)}>
+              <button className="delete-comment" onClick={() => deleteComment(id)}>
                 Delete
               </button>
               
