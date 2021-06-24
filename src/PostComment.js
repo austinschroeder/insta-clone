@@ -48,6 +48,12 @@ function PostComment({ postId, user, username, caption, imageUrl }) {
     db.collection("posts").doc(postId).collection("comments").doc(id).delete();
   }
 
+  //////////////////////////
+  //////////////////////////
+  //////////////////////////
+  const deleteUpload = (postId) => {
+    db.collection("posts").doc(postId).delete();
+  }
   
   
   return (
@@ -59,6 +65,10 @@ function PostComment({ postId, user, username, caption, imageUrl }) {
           src=""
         />
         <h3>{username}</h3>
+        
+        <button className="delete-upload" onClick={() => deleteUpload(postId)}>
+                Delete
+              </button>
       </div>
       
       <img className="post-image" src={imageUrl} alt="" />
