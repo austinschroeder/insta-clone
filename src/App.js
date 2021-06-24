@@ -89,7 +89,7 @@ function App() {
   }, []);
 
 
-///////////USER AUTH//////////////
+    ///////////USER AUTH//////////////
   const signUp = (event) => {
     //prevent page refresh
     event.preventDefault()
@@ -105,6 +105,7 @@ function App() {
       .catch((error) => alert(error.message))
 
       setOpen(false);
+      setOpenSignIn(true);
   }
 
   const signIn = (event) => {
@@ -198,6 +199,7 @@ function App() {
             src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" 
             alt="" 
             />
+          {/* <h2>{username}</h2> */}
         {/* if/or */}
         {user ? (
           // if user is true (exists)
