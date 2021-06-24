@@ -67,7 +67,7 @@ function PostComment({ postId, user, username, caption, imageUrl }) {
       <h4 className="post-text"><strong>{username}:</strong> {caption}</h4>
 
       <div className="post-comments">
-        {comments.length && comments.map(({comment, id}) => (
+        {comments.length > 0 && comments.map(({comment, id}) => (
           <div className="post-comment-p" key={id}>
             <strong>{typeof comment.username === 'string' && comment.username}: </strong> 
             {comment.text}
@@ -77,9 +77,7 @@ function PostComment({ postId, user, username, caption, imageUrl }) {
               <button className="delete-button" onClick={() => deleteComment(id)}>
                 Delete
               </button>
-              {/* <button className="edit-button" onClick={() => editComment(id)}>
-                Edit
-              </button> */}
+              
               <EditFunction id={id} postId={postId} comment={comment.text}/>
             </>
             }

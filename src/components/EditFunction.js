@@ -14,7 +14,7 @@ export default function EditFunction({id, postId, comment}) {
     setOpen(!open)
   }
   return (
-    <div className="post-comment-p">
+    <>
       <button className="edit-button" onClick={() => setOpen(!open)}>
                 Edit
               </button>
@@ -27,9 +27,8 @@ export default function EditFunction({id, postId, comment}) {
                     onChange={(e) => setValue(e.target.value)}
                 /> 
                 </form>  
-              
               }
-    </div>
+    </>
   )
 }
 

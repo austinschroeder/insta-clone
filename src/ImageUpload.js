@@ -55,16 +55,20 @@ function ImageUpload({username}) {
   } 
 
   return (
-    <div className="imageupload">
-      {/* Caption Input  */}
-      {/* File picker  */}
-      {/* Post button  */}
-      <progress className="imageupload-progress" value={progress} max="100" />
-      <input type="text" placeholder='Enter a caption...' onChange={event => setCaption(event.target.value)} value={caption}/>
-      <input type="file" onChange={handleChange} />
-      <Button onClick={handleUpload}>
-        Upload
-      </Button>
+    <div className="imageupload" >
+      {username ? (
+        // OPTIONAL: only render image upload if user logged in is true
+        <>
+          <progress className="imageupload-progress" value={progress} max="100" />
+          <input type="text" placeholder='Enter a caption...' onChange={event => setCaption(event.target.value)} value={caption}/>
+          <input type="file" onChange={handleChange} />
+          <Button onClick={handleUpload}>
+            Upload
+          </Button>
+        </>
+      ): (<h3>Sorry you need to login to upload</h3>)}
+      
+      
 
     </div>
   )

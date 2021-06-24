@@ -252,13 +252,9 @@ function App() {
 
 
       {/* ////////////IMAGE UPLOAD/////////  */}
-      {user?.displayName ? (
-        // OPTIONAL: only render image upload if user logged in is true
-        <ImageUpload username={user.displayName}/>
-      ): (
-        <h3>Sorry you need to login to upload</h3>
-      )}
-
+      
+        <ImageUpload username={user?.displayName}/>
+      
     </div>
   );
 }
