@@ -32,6 +32,7 @@ function PostComment({ postId, user, username, caption, imageUrl}) {
     };
   }, [postId]);
 
+   //////////////////////////
   const postComment = (event) => {
     event.preventDefault();
 
@@ -43,13 +44,12 @@ function PostComment({ postId, user, username, caption, imageUrl}) {
     setComment('');
   }
 
+  //////////////////////////
   const deleteComment = (id) => {
     // console.log(id)
     db.collection("posts").doc(postId).collection("comments").doc(id).delete();
   }
 
-  //////////////////////////
-  //////////////////////////
   //////////////////////////
   const deleteUpload = (postId) => {
     db.collection("posts").doc(postId).delete();
@@ -68,7 +68,8 @@ function PostComment({ postId, user, username, caption, imageUrl}) {
         {
           (user && username === user.displayName) &&
           <button className="delete-upload" onClick={() => deleteUpload(postId)}>
-                Delete Upload
+                {/* Delete Upload */}
+                <img className="trashcan" src="https://static.thenounproject.com/png/3823-200.png" alt="" />
               </button>
         }
       </div>

@@ -83,9 +83,9 @@
   border: none;
   background-color: transparent;
   color: #f33232;
-  border: 1px #f33232 solid;
+  /* border: 1px #f33232 solid; */
   border-radius: 3px;
-  margin-left: 20px;
+  margin-left: 320px;
 }
 
 .delete-upload:hover {
@@ -95,7 +95,7 @@
   border: none;
   color: white;
   border: 1px #f33232 solid;
-  margin-left: 20px;
+  margin-left: 320px;
 }
 
 .edit-button {
@@ -109,4 +109,8 @@
 
 .edit-button:hover {
   font-weight: 900;
+}
+
+.trashcan {
+  width: 30px;
 }
