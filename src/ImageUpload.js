@@ -68,7 +68,7 @@ function ImageUpload({username}) {
             Upload
           </Button>
         </>
-      ): (<h3>Sorry you need to login to upload or REFRESH PAGE</h3>)}
+      ): (<h3>Sorry you need to login to upload</h3>)}
       
     </div>
   )

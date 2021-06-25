@@ -199,7 +199,8 @@ function App() {
             src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" 
             alt="" 
             />
-          {/* <h2>{username}</h2> */}
+          <h2>{user?.displayName}</h2>
+          {console.log({user})}
         {/* if/or */}
         {user ? (
           // if user is true (exists)
