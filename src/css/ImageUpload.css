@@ -30,10 +30,11 @@ input[type=file]::file-selector-button {
   border-radius: 13px;
   background-color: #000000;
   transition: 1s;
+  margin-top: 4px;
 }
 
 input[type=file]::file-selector-button:hover {
   background-color: #aba8a8;
   color: black
-  
+
 }
