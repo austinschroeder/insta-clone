@@ -9,7 +9,8 @@ import { Button, Input  } from '@material-ui/core'
 import ImageUpload from "./ImageUpload";
 import PostComment from "./PostComment"
 // import UserAuth from "./components/UserAuth";
-import './App.css';
+import './css/App.css';
+import test from './images/test.jpg'
 
 
 /////////////////////////////////////////

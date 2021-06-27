@@ -2,7 +2,8 @@ import {useState} from 'react'
 import { Button } from "@material-ui/core";
 import firebase from "firebase";
 import { storage, db } from "./firebase"
-import './ImageUpload.css'
+import './css/ImageUpload.css'
+
 
 function ImageUpload({username}) {
   const [image, setImage] = useState(null);
@@ -69,7 +70,7 @@ function ImageUpload({username}) {
           </Button>
         </>
       ): (<h3>Sorry you need to login to upload</h3>)}
-      
+          
     </div>
   )
 }

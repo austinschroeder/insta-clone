@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import './PostComment.css';
+import './css/PostComment.css';
 import Avatar from '@material-ui/core/Avatar';
 import firebase from "firebase";
 import { db } from './firebase';
 import EditFunction from './components/EditFunction';
+import bookmark from './images/bookmark.png';
+import dm from './images/dm.png';
+import heart from './images/heart.png';
+import message from './images/message.png';
 
 
 function PostComment({ postId, user, username, caption, imageUrl}) {
@@ -73,9 +77,13 @@ function PostComment({ postId, user, username, caption, imageUrl}) {
               </button>
         }
       </div>
-      
-      <img className="post-image" src={imageUrl} alt="" />
-      {/* IMAGE  */}
+        <img className="post-image" src={imageUrl} alt="" />
+      <div className="icons-container">
+        <img className="icons" src={heart} alt="" />
+        <img className="icons" src={message} alt="" />
+        <img className="icons dm" src={dm} alt="" />
+        <img className="icons-bookmark" src={bookmark} alt="" />
+      </div>
 
       <h4 className="post-text"><strong>{username}:</strong> {caption}</h4>
 
