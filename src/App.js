@@ -10,7 +10,7 @@ import ImageUpload from "./ImageUpload";
 import PostComment from "./PostComment"
 // import UserAuth from "./components/UserAuth";
 import './css/App.css';
-import test from './images/test.jpg'
+import instalogo from './images/insta-logo.png'
 
 
 /////////////////////////////////////////
@@ -131,7 +131,8 @@ function App() {
           <center>
             <img
               className="app-headerImage" 
-              src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" 
+              // src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" 
+              src={instalogo} 
               alt="" 
             />
           </center>
@@ -169,7 +170,8 @@ function App() {
           <center>
             <img
               className="app-headerImage" 
-              src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" 
+              // src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
+              src={instalogo}
               alt="" 
             />
           </center>
@@ -197,7 +199,8 @@ function App() {
       <div className="app-header">
         <img 
             className="app-headerImage"
-            src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" 
+            // src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" 
+            src={instalogo}
             alt="" 
             />
           <h2>{user?.displayName}</h2>
