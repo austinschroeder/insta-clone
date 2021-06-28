@@ -65,7 +65,7 @@ function PostComment({ postId, user, username, caption, imageUrl}) {
       <div className="post-header">
         <Avatar 
           className="post-avatar"
-          alt='NealDegrasse'
+          alt={username}
           src=""
         />
         <h3>{username}</h3>

@@ -71,7 +71,7 @@ function App() {
         unsubscribe();
       }
     })
-  }, [user, username]);
+  }, [user, username]); //runs function when user or username state changes
 
 
   useEffect(() => {
@@ -87,7 +87,7 @@ function App() {
       })));
     })
 
-  }, []);
+  }, []); //runs once when the page loads
 
 
     ///////////USER AUTH//////////////
