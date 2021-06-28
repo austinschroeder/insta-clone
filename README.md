@@ -4,7 +4,7 @@ Technologies used: REACT - FIREBASE - MATERIAL-UI - HTML - CSS
 
 <a href="https://ibb.co/xFxD2vf"><img src="https://i.ibb.co/CPRzwdM/Wireframe.png" alt="Wireframe" border="0"></a>
 
-# Run "$nmp i" to install required dependencies
+# Run "$npm i" to install required dependencies
 
 # Getting Started with Create React App
 
