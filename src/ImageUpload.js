@@ -46,7 +46,7 @@ function ImageUpload({username}) {
               imageUrl: url,
               username: username  
             });
-
+            // RESET all of these things after function is complete
             setProgress(0);
             setCaption("");
             setImage(null);
