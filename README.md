@@ -1,16 +1,17 @@
 Insta Clone is a web app based on the popular website, "Instagram".   Uses full CRUD implementing cloud based Firebase to handle all of the backend and auth.
 
-Technologies used: REACT - FIREBASE - MATERIAL-UI - HTML - CSS
+# Technologies used: REACT - FIREBASE - MATERIAL-UI - HTML - CSS
 
 <a href="https://ibb.co/xFxD2vf"><img src="https://i.ibb.co/CPRzwdM/Wireframe.png" alt="Wireframe" border="0"></a>
 
 ![](src/images/ERD.png)
 
+![](src/images/screenshot1.png)
+
+![](src/images/screenshot2.png)
+
 # Run "$npm i" to install required dependencies
 
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
