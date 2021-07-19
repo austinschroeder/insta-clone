@@ -6,7 +6,11 @@ Insta Clone is a web app based on the popular website, "Instagram".   Uses full 
 
 ![](src/images/ERD.png)
 
+
+## Screenshot 1
 ![](src/images/screenshot1.png)
+
+## Screenshot 2
 
 ![](src/images/screenshot2.png)
 
