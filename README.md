@@ -1,6 +1,8 @@
+## [Live Demo](https://insta-clone-9079b.web.app/)
+
 Insta Clone is a web app based on the popular website, "Instagram".   Uses full CRUD implementing cloud based Firebase to handle all of the backend and auth.
 
-# Technologies used: REACT - FIREBASE - MATERIAL-UI - HTML - CSS
+### Technologies used: REACT - FIREBASE - MATERIAL-UI - HTML - CSS
 
 <a href="https://ibb.co/xFxD2vf"><img src="https://i.ibb.co/CPRzwdM/Wireframe.png" alt="Wireframe" border="0"></a>
 
