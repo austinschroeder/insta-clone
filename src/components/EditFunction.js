@@ -32,3 +32,4 @@ export default function EditFunction({id, postId, comment}) {
   )
 }
 
+// Export is in function
